@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
 
 button{
+  color:navy;
   background-color:skyblue;
   font-family: 'Google Sans Flex', sans-serif;
   border:none;
-}
-button{
   width:1000px;
   height:100px;
   font-size:20px;
 }
+
 a{
   text-decoration: none;
   display: block;
