@@ -1,20 +1,23 @@
-const Foods = {
-  happy: ["치킨", "피자", "스테이크", "떡순튀", "짜장면탕수육", "돼지갈비", "샤브샤브", "족발보쌈", "안동찜닭", "로제떡볶이", "텐동", "피자치킨세트", "치즈돈까스", "팟타이", "치킨마요덮밥", "생선구이", "함박스테이크정식", "나시고랭", "인도커리"],
-  sad: ["라면", "순두부찌개", "햄버거", "새우크림파스타","연어초밥", "돈까스", "우동", "생선구이", "간장게장", "곱창대창", "잔치국수", "참치김밥+치즈라면", "육회비빔밥", "교촌허니콤보", "마라샹궈"],
-  tired: ["서브웨이", "삼계탕", "평양냉면", "닭갈비", "감자탕", "순대국밥", "바지락칼국수", "설렁탕", "백반", "돌솥비빔밥", "쌀국수", "부대찌개", "오징어덮밥", "버섯전골", "복지리", "된장찌개", "치즈떡볶이", "뼈해장국", "돈코츠라멘", "콩국수"],
-  angry: ["곱창", "제육덮밥", "불닭볶음면", "엽떡", "마라탕+탕후루", "오므라이스", "국물닭발", "쭈꾸미볶음", "삼겹살", "물회","지코바치킨+치밥", "고추바사삭", "쫄면", "메밀소바", "탄탄멘", "비빔냉면", "새콤달콤냉면", "컵라면폭식", "감바스알아히요+와인", "우울할땐고기앞으로", "갈비찜"]
-};
+let Foods = {};
+
+fetch("krfoods.json")
+  .then(res => res.json())
+  .then(data => {
+    Foods = data;
+  });
 
 const btn = document.querySelectorAll(".liquid");
 const r = document.getElementById("r");
-const sound = document.getElementById("sound")
+const sound = document.getElementById("sound");
 
 btn.forEach(button => {
   button.addEventListener("click", () => {
-    navigator.vibrate && navigator.vibrate(100)
-    sound.play()
+    navigator.vibrate && navigator.vibrate(100);
+    sound.play();
+
     const f = button.dataset.f;
     const foodline = Foods[f];
+
     const i = Math.floor(Math.random() * foodline.length);
     r.innerText = foodline[i] + "!";
   });
