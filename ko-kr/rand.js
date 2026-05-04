@@ -12,7 +12,6 @@ const sound = document.getElementById("sound");
 
 btn.forEach(button => {
   button.addEventListener("click", () => {
-    navigator.vibrate && navigator.vibrate(100);
     sound.play();
 
     const f = button.dataset.f;
