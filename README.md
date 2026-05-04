@@ -4,4 +4,4 @@
 
 This code help you to choose your lunch or dinner menu based on your feelings. I would like to share this for people who is indecisive just like me. Hope you enjoy your meal today with this Menu Chooser!
 
-V2.1.1
+V3.0.0
