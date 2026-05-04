@@ -11,9 +11,17 @@ const btns        = document.querySelectorAll(".liquid[data-f]");
 const r           = document.getElementById("r");
 const sound       = document.getElementById("sound");
 const shareBtn    = document.getElementById("share-btn");
+const tagline     = document.getElementById("tagline");
 const resultCard  = document.getElementById("result-card");
 const themeBtn    = document.getElementById("theme-btn");
 const html        = document.documentElement;
+
+const taglines = {
+  happy: "기분 좋을 땐 뭘 먹어도 맛있어! 🎉",
+  sad:   "우울할 땐 고기 앞으로! 🥩",
+  tired: "힘들 땐 일단 먹고 봐! 💪",
+  angry: "화날 땐 매운 거 먹어야지! 🔥"
+};
 
 let curMood = null;
 let curFood = null;
@@ -68,6 +76,8 @@ btns.forEach(btn => {
     r.classList.add("pop");
     r.innerText = food + "!";
 
+    tagline.innerText = taglines[f] || "";
+    tagline.style.display = "";
     shareBtn.style.display = "";
   });
 });

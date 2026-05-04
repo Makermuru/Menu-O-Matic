@@ -200,6 +200,15 @@ h1 {
   transition: color 0.35s ease;
 }
 
+.result-tagline {
+  font-size: clamp(13px, 0.8vw + 9px, 18px);
+  color: var(--text-sub);
+  margin: 0;
+  text-align: center;
+  transition: color 0.35s ease;
+  animation: fadeIn 0.4s ease;
+}
+
 /* ════════════════════════════
    공유 버튼
 ════════════════════════════ */
