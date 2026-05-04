@@ -12,19 +12,38 @@
 
   <button id="theme-btn" class="theme-toggle jua" aria-label="테마 전환">🌙 다크</button>
 
-  <h1 class="jua">오늘 뭐먹지?</h1>
+  <div class="title-area">
+    <p class="title-sup jua">오늘의 메뉴 추천</p>
+    <h1 class="jua">오늘 뭐먹지?</h1>
+    <p class="title-sub jua">지금 기분이 어때요?</p>
+  </div>
 
   <div class="buttons">
-    <button class="liquid jua" data-f="happy">행복 😄</button>
-    <button class="liquid jua" data-f="sad">슬픔 😢</button>
-    <button class="liquid jua" data-f="tired">힘듦 😓</button>
-    <button class="liquid jua" data-f="angry">화남 😡</button>
+    <button class="liquid jua" data-f="happy">
+      <span class="btn-emoji">😄</span>
+      <span class="btn-label">행복해</span>
+      <span class="btn-sub">신나는 날</span>
+    </button>
+    <button class="liquid jua" data-f="sad">
+      <span class="btn-emoji">😢</span>
+      <span class="btn-label">슬퍼</span>
+      <span class="btn-sub">우울한 날</span>
+    </button>
+    <button class="liquid jua" data-f="tired">
+      <span class="btn-emoji">😓</span>
+      <span class="btn-label">힘들어</span>
+      <span class="btn-sub">지친 날</span>
+    </button>
+    <button class="liquid jua" data-f="angry">
+      <span class="btn-emoji">😡</span>
+      <span class="btn-label">화나</span>
+      <span class="btn-sub">열받는 날</span>
+    </button>
   </div>
 
   <div id="result-card" class="result-card">
-    <p class="result-label jua">오늘의 메뉴는...</p>
-    <p id="r" class="result-food jua">---</p>
     <p id="tagline" class="result-tagline jua" style="display:none;"></p>
+    <p id="r" class="result-food jua">---</p>
     <button id="share-btn" class="share-btn jua" style="display:none;">공유하기 🔗</button>
   </div>
 

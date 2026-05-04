@@ -98,13 +98,33 @@ body.img::before {
 ════════════════════════════ */
 .jua { font-family: "Nanum Gothic", sans-serif; font-weight: 800; }
 
+.title-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.title-sup {
+  font-size: clamp(12px, 0.7vw + 9px, 16px);
+  color: var(--text-sub);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
 h1 {
   font-size: clamp(28px, 2.6vw + 19px, 56px);
   text-align: center;
   margin: 0;
-  position: relative;
-  z-index: 1;
   color: var(--text);
+}
+
+.title-sub {
+  font-size: clamp(13px, 0.8vw + 9px, 18px);
+  color: var(--text-sub);
+  margin: 0;
 }
 
 /* ════════════════════════════
@@ -126,18 +146,25 @@ h1 {
 ════════════════════════════ */
 .liquid {
   width: clamp(140px, 40vw, 380px);
-  padding: clamp(12px, 1.8vh, 22px) 0;
-  font-size: clamp(18px, 1.2vw + 13.7px, 28px);
+  padding: clamp(14px, 2vh, 26px) 0;
   color: var(--text);
   background: var(--card-bg);
   border-radius: clamp(16px, 2vw, 22px);
   border: 1px solid var(--card-border);
   box-shadow: 0 8px 32px var(--card-shadow);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
   transition: background 0.22s ease, border-color 0.22s ease,
               box-shadow 0.22s ease, transform 0.22s cubic-bezier(0.34,1.56,0.64,1),
               color 0.35s ease;
 }
+
+.btn-emoji  { font-size: clamp(24px, 2vw + 16px, 36px); line-height: 1; }
+.btn-label  { font-size: clamp(16px, 1vw + 12px, 22px); }
+.btn-sub    { font-size: clamp(11px, 0.5vw + 8px, 14px); color: var(--text-sub); transition: color 0.35s ease; }
 
 /* ════════════════════════════
    결과 카드
@@ -178,14 +205,6 @@ h1 {
   background: var(--angry-h);
   border-color: var(--angry-b);
   box-shadow: 0 20px 48px var(--angry-s);
-}
-
-.result-label {
-  font-size: clamp(14px, 0.9vw + 10px, 20px);
-  color: var(--text-sub);
-  margin: 0;
-  text-align: center;
-  transition: color 0.35s ease;
 }
 
 .result-food {
