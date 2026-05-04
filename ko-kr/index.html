@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,10 @@
 </head>
 <body class="img">
   <audio id="sound" src="tap.mp3"></audio>
-  
-  <h1 class="jua">오늘 뭐먹지?<h1>
+
+  <button id="theme-btn" class="theme-toggle jua" aria-label="테마 전환">🌙 다크</button>
+
+  <h1 class="jua">오늘 뭐먹지?</h1>
 
   <div class="buttons">
     <button class="liquid jua" data-f="happy">행복 😄</button>
@@ -21,6 +23,9 @@
 
   <p class="ogong jua">오늘의 메뉴는 바로...</p>
   <p id="r" class="ogong jua">---</p>
+
+  <button id="share-btn" class="liquid jua share-btn" style="display:none;">공유하기 🔗</button>
+
   <script src="rand.js"></script>
 </body>
 </html>
