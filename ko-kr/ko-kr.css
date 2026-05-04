@@ -144,15 +144,59 @@ h1 {
 }
 
 /* ════════════════════════════
-   결과 / 공유 텍스트
+   결과 카드
 ════════════════════════════ */
-.ogong {
-  font-size: clamp(22px, 2.4vw + 13.5px, 48px);
-  text-align: center;
-  margin: 0;
+.result-card {
+  width: clamp(280px, 82vw, 560px);
+  padding: clamp(24px, 4vh, 44px) clamp(28px, 5vw, 52px);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: clamp(20px, 2.5vw, 32px);
+  box-shadow: 0 8px 32px var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 1.8vh, 22px);
   position: relative;
   z-index: 1;
+  transition: background 0.35s ease, border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.result-card[data-mood="happy"] {
+  background: var(--happy-h);
+  border-color: var(--happy-b);
+  box-shadow: 0 20px 48px var(--happy-s);
+}
+.result-card[data-mood="sad"] {
+  background: var(--sad-h);
+  border-color: var(--sad-b);
+  box-shadow: 0 20px 48px var(--sad-s);
+}
+.result-card[data-mood="tired"] {
+  background: var(--tired-h);
+  border-color: var(--tired-b);
+  box-shadow: 0 20px 48px var(--tired-s);
+}
+.result-card[data-mood="angry"] {
+  background: var(--angry-h);
+  border-color: var(--angry-b);
+  box-shadow: 0 20px 48px var(--angry-s);
+}
+
+.result-label {
+  font-size: clamp(14px, 0.9vw + 10px, 20px);
+  color: var(--text-sub);
+  margin: 0;
+  text-align: center;
+  transition: color 0.35s ease;
+}
+
+.result-food {
+  font-size: clamp(30px, 3vw + 18px, 64px);
   color: var(--text);
+  margin: 0;
+  text-align: center;
   transition: color 0.35s ease;
 }
 
@@ -160,10 +204,15 @@ h1 {
    공유 버튼
 ════════════════════════════ */
 .share-btn {
-  width: clamp(160px, 35vw, 280px);
-  font-size: clamp(15px, 1vw + 11px, 22px);
-  background: var(--share-bg) !important;
-  border-color: var(--share-border) !important;
+  padding: clamp(8px, 1.2vh, 14px) clamp(24px, 3.5vw, 40px);
+  font-size: clamp(14px, 0.8vw + 10px, 18px);
+  color: var(--text);
+  background: var(--share-bg);
+  border: 1px solid var(--share-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.22s, transform 0.22s cubic-bezier(0.34,1.56,0.64,1),
+              color 0.35s ease;
   animation: fadeIn 0.35s ease;
 }
 
@@ -181,7 +230,7 @@ h1 {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-#r.pop {
+.result-food.pop {
   animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
@@ -215,8 +264,10 @@ h1 {
     box-shadow: 0 20px 40px var(--angry-s);
   }
   .share-btn:hover {
-    transform: translateY(-4px) scale(1.02);
+    background: var(--card-hover);
+    transform: translateY(-3px) scale(1.05);
   }
 }
 
-.liquid:active { transform: scale(0.96) !important; }
+.liquid:active,
+.share-btn:active { transform: scale(0.96) !important; }

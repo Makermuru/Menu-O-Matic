@@ -7,12 +7,13 @@ fetch("krfoods.json")
   .then(res => res.json())
   .then(data => { Foods = data; });
 
-const btns      = document.querySelectorAll(".liquid[data-f]");
-const r         = document.getElementById("r");
-const sound     = document.getElementById("sound");
-const shareBtn  = document.getElementById("share-btn");
-const themeBtn  = document.getElementById("theme-btn");
-const html      = document.documentElement;
+const btns        = document.querySelectorAll(".liquid[data-f]");
+const r           = document.getElementById("r");
+const sound       = document.getElementById("sound");
+const shareBtn    = document.getElementById("share-btn");
+const resultCard  = document.getElementById("result-card");
+const themeBtn    = document.getElementById("theme-btn");
+const html        = document.documentElement;
 
 let curMood = null;
 let curFood = null;
@@ -60,6 +61,8 @@ btns.forEach(btn => {
     curMood = f;
     curFood = food;
 
+    resultCard.dataset.mood = f;
+
     r.classList.remove("pop");
     void r.offsetWidth;
     r.classList.add("pop");
@@ -69,7 +72,7 @@ btns.forEach(btn => {
   });
 });
 
-r.addEventListener("animationend", () => r.classList.remove("pop"));
+r.addEventListener("animationend", () => r.classList.remove("pop"), { passive: true });
 
 /* ── 공유하기 ── */
 shareBtn.addEventListener("click", () => {
