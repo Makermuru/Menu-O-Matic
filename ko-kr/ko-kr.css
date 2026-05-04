@@ -1,8 +1,4 @@
-@font-face {
-  font-family: 'malang';
-  src: url('./malang.woff2') format('woff2');
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700;800&display=swap');
 
 * { box-sizing: border-box; }
 
@@ -100,7 +96,7 @@ body.img::before {
 /* ════════════════════════════
    폰트
 ════════════════════════════ */
-.jua { font-family: "malang", sans-serif; }
+.jua { font-family: "Nanum Gothic", sans-serif; font-weight: 800; }
 
 h1 {
   font-size: clamp(28px, 2.6vw + 19px, 56px);
