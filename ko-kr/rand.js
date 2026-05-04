@@ -18,7 +18,7 @@ const html        = document.documentElement;
 
 const taglines = {
   happy: "기분 좋을 땐 뭘 먹어도 맛있어! 🎉",
-  sad:   "우울할 땐 고기 앞으로! 🥩",
+  sad:   "우울할떈 이거 먹고 힘내봐! 😊",
   tired: "힘들 땐 일단 먹고 봐! 💪",
   angry: "화날 땐 매운 거 먹어야지! 🔥"
 };
