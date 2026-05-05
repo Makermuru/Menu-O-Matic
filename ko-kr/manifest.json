@@ -1,6 +1,6 @@
 {
   "name": "오늘 뭐먹지?",
-  "short_name": "뭐먹지",
+  "short_name": "뭐먹",
   "description": "기분에 따라 오늘의 메뉴를 추천해줘요",
   "start_url": "./",
   "display": "standalone",
